@@ -5,7 +5,7 @@ export const AppInstructions = () => (
     <Col>
       <Alert variant="success">
         <Alert.Heading>Todo List App</Alert.Heading>
-        Welcome to the ClearPoint SRE technical test - This has been Modified.
+        Welcome to the ClearPoint SRE technical test - This has been Modified..Again
         <br />
         <br />
 
