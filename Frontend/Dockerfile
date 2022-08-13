@@ -8,10 +8,10 @@ RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
 
 WORKDIR /app
-COPY /package.json ./
+COPY Frontend/package.json ./
 
 RUN yarn install
-COPY . /app
+COPY Frontend/ /app
 RUN yarn build
 
 # STAGE 2
