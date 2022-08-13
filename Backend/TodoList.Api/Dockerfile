@@ -5,11 +5,11 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
-COPY ["TodoList.Api/TodoList.Api.csproj", "TodoList.Api/"]
-COPY ["TodoList.Data/TodoList.Data.csproj", "TodoList.Data/"]
-COPY ["TodoList.Business/TodoList.Business.csproj", "TodoList.Business/"]
+COPY ["Backend/TodoList.Api/TodoList.Api/TodoList.Api.csproj", "TodoList.Api/"]
+COPY ["Backend/TodoList.Api/TodoList.Data/TodoList.Data.csproj", "TodoList.Data/"]
+COPY ["Backend/TodoList.Api/TodoList.Business/TodoList.Business.csproj", "TodoList.Business/"]
 RUN dotnet restore "TodoList.Api/TodoList.Api.csproj"
-COPY . .
+COPY Backend/TodoList.Api/ .
 WORKDIR "/src/TodoList.Api"
 RUN dotnet build "TodoList.Api.csproj" -c Release -o /app/build
 
