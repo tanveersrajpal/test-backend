@@ -40,5 +40,6 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY_FRONTEND:$IMAGE_TAG        
         docker build --file=Backend/TodoList.Api/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY_BACKEND:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY_BACKEND:$IMAGE_TAG
+        aws ecs update-service --cluster clearpoint-main-cluster-listapi-appp --service clearpoint-cluster-service-listapi-app --force-new-deployment
         
         
